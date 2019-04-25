@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 module MiniRocket
   class ComponentProxy
     def split_string_on(string, match)
       return '' unless string && match
+
       first_part = string.split(Regexp.new("#{match}\\z")).first
       [first_part, match]
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MiniRocket
   module Actions
     class Sidebar < Base

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MiniRocket
   class FormProxy < ComponentProxy
     include MiniRocket::Components::Panelable
@@ -6,7 +8,7 @@ module MiniRocket
 
     delegate :object, to: :form_builder
 
-    CLOSING_TAG = '</form>'.freeze
+    CLOSING_TAG = '</form>'
 
     def initialize(resource, parent, template)
       @resource = resource
@@ -36,7 +38,7 @@ module MiniRocket
     end
 
     def inputs(label, &block)
-      label = label.is_a?(Symbol) ? I18n.t("cleancms.form.inputs.#{label}") : label
+      label = label.is_a?(Symbol) ? I18n.t("mini_rocket.form.inputs.#{label}") : label
       with_parent_node { form_builder.inputs(label, &block) }
     end
 

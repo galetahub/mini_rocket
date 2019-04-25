@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'mini_rocket/components/panel'
 require 'mini_rocket/components/attributes_table_for'
 require 'mini_rocket/components/table_for'

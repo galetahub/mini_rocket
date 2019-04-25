@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'mini_rocket/components/component'
 
 module MiniRocket
   module Components
     class AttributesTableFor < Component
-      LAYOUT = 'section'.freeze
+      LAYOUT = 'section'
 
       def rows
         @rows ||= []

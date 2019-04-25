@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module MiniRocket
   # Extract sort options from params or column
   #
   class SortingParser
-    DEFAULT_CLASS_NAME = 'sorting'.freeze
+    DEFAULT_CLASS_NAME = 'sorting'
 
     def initialize(column, params)
       @column = column

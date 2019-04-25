@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'mini_rocket/components/component'
 require 'mini_rocket/components/columnable'
 
@@ -18,7 +20,7 @@ module MiniRocket
         super
 
         @collection = @args[1].call
-        @title = @args[0].is_a?(Symbol) ? I18n.t("cleancms.table_for.#{@args[0]}") : @title
+        @title = @args[0].is_a?(Symbol) ? I18n.t("mini_rocket.table_for.#{@args[0]}") : @title
 
         render(partial: 'table_for', locals: { component: self, title: @title }, layout: layout)
       end

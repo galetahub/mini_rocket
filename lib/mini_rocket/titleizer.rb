@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MiniRocket
   class Titleizer
     ACTION_ALIASES = { create: :new, update: :edit }.freeze
