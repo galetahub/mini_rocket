@@ -36,6 +36,7 @@ en:
       save: Save
       reset: Reset
       filter: Filter
+      toggle_nav: Toggle navigation
 
     buttons:
       new: Create

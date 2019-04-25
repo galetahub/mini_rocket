@@ -1,0 +1,25 @@
+.form-control-error {
+    color: #fb434a;
+    padding: 5px 0px;
+    font-size: 80%;
+}
+
+.form-control-error ul {
+    list-style: none;
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+}
+
+.form-control-error-list ul {
+    list-style: none;
+    color: #fb434a;
+    padding: 0px;
+    margin: 5px 0px 0px 0px;
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.has-danger .select2-selection--single, .has-danger .select2-selection--multiple {
+    border-color: #fb434a !important;
+}

@@ -36,6 +36,7 @@ uk:
       save: Зберегти
       reset: Очистити
       filter: Пошук
+      toggle_nav: Toggle navigation
 
     buttons:
       new: Створити

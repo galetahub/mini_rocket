@@ -40,6 +40,7 @@ ru:
       save: Сохранить
       reset: Очистить
       filter: Поиск
+      toggle_nav: Toggle navigation
 
     buttons:
       new: Создать

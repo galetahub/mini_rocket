@@ -1,14 +1,14 @@
 - if controller.respond_to?(:new)
   = link_to new_resource_path, class: 'pull-right btn btn-primary' do
-    i.icmn-plus3.margin-right-5
+    i.fas.fa-plus.margin-right-5
     = t('mini_rocket.label.add_resource')
 
 - if rocket_builder.reorder?
   = link_to reorder_collection_path, class: 'pull-right btn mr10' do
-    i.icmn-sort.margin-right-5
+    i.fas.fa-sort.margin-right-5
     = t('mini_rocket.label.reorder')
 
 - if rocket_builder.filter?
   = link_to '#filter', class: 'pull-right btn mr10', data: { toggle: 'collapse' }, role: 'button', aria: { controls: 'filter' } do
-    i.icmn-search.margin-right-5
+    i.fas.fa-search.margin-right-5
     = t('mini_rocket.label.filter')

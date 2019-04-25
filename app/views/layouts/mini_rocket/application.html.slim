@@ -9,11 +9,14 @@ html lang="#{I18n.locale}"
         = render partial: 'mini_rocket/common/logo'
 
         nav.navbar.navbar-static-top
-          = render partial: 'mini_rocket/common/sidebar_menu'
+          a.sidebar-toggle href='javascript:void(0)' data-toggle='push-menu' role='button' data-turbolinks="false"
+            i.fas.fa-bars
+            span.sr-only = t('mini_rocket.label.toggle_nav')
+          = render partial: 'mini_rocket/common/header_menu'
 
       aside.main-sidebar
         section.sidebar
-          = render partial: 'mini_rocket/common/header_menu'
+          = render partial: 'mini_rocket/common/sidebar_menu'
 
       .content-wrapper
         = yield
