@@ -1,15 +1,18 @@
 - if rocket_builder.show? && can?(:show, resource)
   li.dropdown-item
-    i.far.fa-eye
-    = link_to t('mini_rocket.label.show'), resource_path(resource), class: 'link-show'
+    = link_to resource_path(resource), class: 'link-show' do
+      i.far.fa-eye
+      span = t('mini_rocket.label.show')
 
 - if can? :edit, resource
   li.dropdown-item
-    i.far.fa-edit
-    = link_to t('mini_rocket.label.edit'), edit_resource_path(resource), class: 'link-edit'
+    = link_to edit_resource_path(resource), class: 'link-edit' do
+      i.far.fa-edit
+      span = t('mini_rocket.label.edit')
 
 - if can? :delete, resource
   li.dropdown-divider
   li.dropdown-item
-    i.fas.fa-trash
-    = link_to t('mini_rocket.label.delete'), resource_path(resource), method: :delete, data: { confirm: t('mini_rocket.dialog.confirm_delete') }, class: 'link-delete'
+    = link_to resource_path(resource), method: :delete, data: { confirm: t('mini_rocket.dialog.confirm_delete') }, class: 'link-delete' do
+      i.fas.fa-trash
+      span = t('mini_rocket.label.delete')
