@@ -4,14 +4,14 @@ module MiniRocket
   module Formatters
     extend ActiveSupport::Autoload
 
-    autoload :BaseFormat, 'cleancms/formatters/base_format'
-    autoload :DefaultFormat, 'cleancms/formatters/default_format'
-    autoload :BooleanFormat, 'cleancms/formatters/boolean_format'
-    autoload :StringFormat, 'cleancms/formatters/string_format'
-    autoload :FixnumFormat, 'cleancms/formatters/fixnum_format'
-    autoload :IdFormat, 'cleancms/formatters/id_format'
-    autoload :TimeFormat, 'cleancms/formatters/time_format'
-    autoload :StatusFormat, 'cleancms/formatters/status_format'
+    autoload :BaseFormat, 'mini_rocket/formatters/base_format'
+    autoload :DefaultFormat, 'mini_rocket/formatters/default_format'
+    autoload :BooleanFormat, 'mini_rocket/formatters/boolean_format'
+    autoload :StringFormat, 'mini_rocket/formatters/string_format'
+    autoload :FixnumFormat, 'mini_rocket/formatters/fixnum_format'
+    autoload :IdFormat, 'mini_rocket/formatters/id_format'
+    autoload :TimeFormat, 'mini_rocket/formatters/time_format'
+    autoload :StatusFormat, 'mini_rocket/formatters/status_format'
 
     def self.build(resource, method_name, options = {})
       options[:object] ||= resource.send(method_name)

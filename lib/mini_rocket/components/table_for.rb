@@ -1,5 +1,5 @@
-require 'cleancms/components/component'
-require 'cleancms/components/columnable'
+require 'mini_rocket/components/component'
+require 'mini_rocket/components/columnable'
 
 module MiniRocket
   module Components

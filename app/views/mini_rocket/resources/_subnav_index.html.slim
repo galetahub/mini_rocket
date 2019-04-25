@@ -1,5 +1,5 @@
-- if cleancms_builder && cleancms_builder.navigation?
+- if rocket_builder && rocket_builder.navigation?
   .sub-nav
     ul.ml10
-      - cleancms_builder.navigation.each_menu do |menu|
+      - rocket_builder.navigation.each_menu do |menu|
         = content_tag(:li, menu.render(self), id: menu.id)

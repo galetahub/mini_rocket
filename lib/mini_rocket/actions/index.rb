@@ -1,4 +1,4 @@
-require 'cleancms/components/columnable'
+require 'mini_rocket/components/columnable'
 
 module MiniRocket
   module Actions

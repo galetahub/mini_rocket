@@ -6,24 +6,24 @@ section.panel.panel-with-borders class="#{resource_collection_name}"
 
   .panel-body
     .row
-      = render(partial: 'index_filter') if cleancms_builder.filter?
+      = render(partial: 'index_filter') if rocket_builder.filter?
     .row
-      = render partial: 'scopes' if cleancms_builder.scopes?
+      = render partial: 'scopes' if rocket_builder.scopes?
     .row
 
       .col-lg-12.margin-bottom-50
         table.table.table-hover.dataTable
           thead.thead-default
             tr
-              - cleancms_builder.index.columns.each do |column|
+              - rocket_builder.index.columns.each do |column|
                 = table_column_tag column do
                   = column.render_title(resource_class)
           tbody
-            = render partial: 'resource', collection: sortable_collection, as: :record
+            = render partial: 'resource', collection: collection, as: :record
 
-    - if cleancms_builder.index.pagination?
+    - if false#rocket_builder.index.pagination?
       .row
         .col-md-4
-          .page_entries_info = page_entries_info sortable_collection
+          .page_entries_info = page_entries_info collection
         .col-md-8
-          .page_pagination = paginate sortable_collection
+          .page_pagination = paginate collection

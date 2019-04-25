@@ -1,4 +1,4 @@
-require 'cleancms/components/holder'
+require 'mini_rocket/components/holder'
 
 module MiniRocket
   module Actions

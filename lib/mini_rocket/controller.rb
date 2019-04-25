@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'inherited_resources'
+
 module MiniRocket
   module Controller
     extend ActiveSupport::Concern
@@ -18,9 +20,6 @@ module MiniRocket
     VIEWS_PATTERN = ':action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}'
 
     included do
-      include MiniRocket::Controller::BaseHelpers
-      extend  MiniRocket::Controller::UrlHelpers
-
       layout MiniRocket::Controller::LAYOUT
 
       before_action :setup_cleancms_views_path
@@ -28,17 +27,19 @@ module MiniRocket
       responders :flash, :http_cache
       inherit_resources
 
-      class_attribute :cleancms_store, instance_writer: false
-      self.cleancms_store = {}
+      helper_method :rocket_builder, :parent?
+
+      class_attribute :rocket_store, instance_writer: false
+      self.rocket_store = {}
     end
 
     module ClassMethods
       def index(options = {}, &block)
-        cleancms_builder.build_index(options, &block)
+        rocket_builder.build_index(options, &block)
       end
 
       def reorder(options = {}, &block)
-        cleancms_builder.build_reorder(options, &block)
+        rocket_builder.build_reorder(options, &block)
 
         define_method(:reorder) { render layout: SIMPLE_LAYOUT }
 
@@ -52,11 +53,11 @@ module MiniRocket
       end
 
       def show(options = {}, &block)
-        cleancms_builder.build_show(options, &block)
+        rocket_builder.build_show(options, &block)
       end
 
       def form(options = {}, &block)
-        cleancms_builder.build_form(options, &block)
+        rocket_builder.build_form(options, &block)
       end
 
       def create(options = {}, &block)
@@ -70,39 +71,46 @@ module MiniRocket
       end
 
       def filter(options = {}, &block)
-        cleancms_builder.build_filter(options, &block)
+        rocket_builder.build_filter(options, &block)
       end
 
       def scopes(options = {}, &block)
-        cleancms_builder.build_scopes(options, &block)
+        rocket_builder.build_scopes(options, &block)
       end
 
       def sidebar(name, options = {}, &block)
-        cleancms_builder.build_sidebar(name, options, &block)
+        rocket_builder.build_sidebar(name, options, &block)
       end
 
       def navigation(options = {}, &block)
-        cleancms_builder.build_navigation(options, &block)
+        rocket_builder.build_navigation(options, &block)
       end
 
-      def cleancms_options(options = {})
-        cleancms_builder.update_options(options)
-        create_resources_path_helpers!
+      def rocket_options(options = {})
+        rocket_builder.update_options(options)
       end
 
-      def cleancms_builder
-        cleancms_store[controller_name] ||= ActionBuilder.new
+      def rocket_builder
+        rocket_store[controller_name] ||= ActionBuilder.new
       end
     end
 
-    def cleancms?
+    def mini_rocket?
       true
+    end
+
+    protected
+
+    # Parent is always false only true when belongs_to is called.
+    #
+    def parent?
+      false
     end
 
     private
 
-    def cleancms_builder
-      cleancms_store[controller_name]
+    def rocket_builder
+      rocket_store[controller_name]
     end
 
     def setup_cleancms_views_path

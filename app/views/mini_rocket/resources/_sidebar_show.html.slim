@@ -5,12 +5,12 @@
 
     li.dropdown-divider
 
-    - if cleancms_builder.new?
+    - if rocket_builder.new?
       li.dropdown-item
         i.dropdown-icon.icmn-plus3
         = link_to t('cleancms.label.add_resource'), new_resource_path, class: 'link-add'
 
-    - if cleancms_builder.index?
+    - if rocket_builder.index?
       li.dropdown-item
         i.dropdown-icon.icmn-arrow-left7
         = link_to t('cleancms.label.back'), collection_path, class: 'link-back'

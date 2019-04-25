@@ -1,3 +1,3 @@
 = content_tag :tr, id: dom_id(record) do
-  - cleancms_builder.index.columns.each do |column|
+  - rocket_builder.index.columns.each do |column|
     td = column.render(record, self)

@@ -1,4 +1,4 @@
-require 'cleancms/components/component'
+require 'mini_rocket/components/component'
 
 module MiniRocket
   module Components
