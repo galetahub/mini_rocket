@@ -71,7 +71,7 @@ module MiniRocket
     end
 
     def new?
-      @form && @form.avaiable_action?(:new)
+      true
     end
 
     def navigation?
@@ -84,59 +84,8 @@ module MiniRocket
 
     def update_options(options)
       return if options.nil?
+
       @options.merge!(options)
-    end
-
-    def klass
-      @options[:class]
-    end
-
-    def collection
-      @collection ||= build_collection
-    end
-
-    def collection_name
-      @options[:collection_name] || klass.model_name.plural
-    end
-
-    def instance_name
-      @options[:instance_name] || klass.model_name.singular
-    end
-
-    def route_instance_name
-      @options[:route_instance_name] || instance_name
-    end
-
-    def route_collection_name
-      @options[:route_collection_name] || collection_name
-    end
-
-    def parent?
-      !parent_klass.nil?
-    end
-
-    def parent_klass
-      @options[:parent_class]
-    end
-
-    def parent_collection_name
-      @options[:parent_collection_name] || parent_klass.model_name.plural
-    end
-
-    def parent_instance_name
-      @options[:parent_instance_name] || parent_klass.model_name.singular
-    end
-
-    def index!
-      @index.call if index?
-      @scopes.call if scopes?
-    end
-
-    protected
-
-    def build_collection
-      return @options[:collection].call if @options[:collection]
-      @options[:class].all
     end
   end
 end

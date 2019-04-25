@@ -7,10 +7,10 @@
 
     - if rocket_builder.new?
       li.dropdown-item
-        i.dropdown-icon.icmn-plus3
+        i.fas.fa-plus
         = link_to t('mini_rocket.label.add_resource'), new_resource_path, class: 'link-add'
 
     - if rocket_builder.index?
       li.dropdown-item
-        i.dropdown-icon.icmn-arrow-left7
+        i.fas.fa-arrow-left
         = link_to t('mini_rocket.label.back'), collection_path, class: 'link-back'

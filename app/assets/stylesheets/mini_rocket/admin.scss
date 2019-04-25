@@ -309,6 +309,13 @@ body {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #24222f;
+}
+
+h6, .h6 {
+  font-size: 14px;
 }
 
 /* General Links */

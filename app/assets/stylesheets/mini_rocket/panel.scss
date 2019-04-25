@@ -1,0 +1,150 @@
+/*
+ * PANELS
+ */
+.page-content-inner > .panel:last-child {
+    margin-bottom: 0px;
+}
+
+.panel {
+    background: #ffffff;
+    border: 1px solid #dfe4ed;
+    padding: 0px;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.panel .panel:last-child {
+    margin-bottom: 0px;
+}
+
+.panel .panel-heading {
+    padding: 25px;
+}
+
+.panel .panel-heading + .panel-body {
+    padding-top: 0px;
+}
+
+.panel .panel-heading h1:last-child, .panel .panel-heading h2:last-child, .panel .panel-heading h3:last-child, .panel .panel-heading h4:last-child, .panel .panel-heading h5:last-child, .panel .panel-heading h6:last-child,
+.panel .panel-heading .h1:last-child, .panel .panel-heading .h2:last-child, .panel .panel-heading .h3:last-child, .panel .panel-heading .h4:last-child, .panel .panel-heading .h5:last-child, .panel .panel-heading .h6:last-child {
+    margin-bottom: 0px;
+}
+
+.panel .panel-heading .dropdown-inline-button {
+    padding: 0px;
+}
+
+.panel .panel-body {
+    padding: 25px;
+}
+
+.panel .panel-body + .panel-footer {
+    padding-top: 0px;
+}
+
+.panel .panel-footer {
+    padding: 25px;
+}
+
+.panel.panel-with-borders > .panel-heading {
+    border-bottom: 1px solid #dfe4ed;
+}
+
+.panel.panel-with-borders > .panel-body {
+    padding-top: 25px;
+}
+
+.panel.panel-with-borders > .panel-footer {
+    border-top: 1px solid #dfe4ed;
+    margin-top: -1px;
+    padding-top: 25px;
+}
+
+.panel.panel-with-sidebar {
+    position: relative;
+}
+
+.panel.panel-with-sidebar:before {
+    content: '';
+    display: block;
+    width: 1px;
+    background: #dfe4ed;
+    position: absolute;
+    left: 240px;
+    top: 0px;
+    height: 100%;
+    z-index: 0;
+}
+
+.panel.panel-with-sidebar:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.panel.panel-with-sidebar .panel-sidebar {
+    float: left;
+    width: 240px;
+    padding: 25px;
+    margin-bottom: -25px;
+}
+
+.panel.panel-with-sidebar .panel-heading, .panel.panel-with-sidebar .panel-body, .panel.panel-with-sidebar .panel-footer {
+    margin-left: 240px;
+}
+
+.panel.panel-with-sidebar.panel-with-right-sidebar:before {
+    left: auto;
+    right: 240px;
+}
+
+.panel.panel-with-sidebar.panel-with-right-sidebar .panel-sidebar {
+    float: right;
+    border-right: 0px;
+}
+
+.panel.panel-with-sidebar.panel-with-right-sidebar .panel-heading, .panel.panel-with-sidebar.panel-with-right-sidebar .panel-body, .panel.panel-with-sidebar.panel-with-right-sidebar .panel-footer {
+    margin-left: 0px;
+    margin-right: 240px;
+}
+
+.sidebar-large.panel {
+    position: relative;
+}
+
+.sidebar-large.panel:before {
+    content: '';
+    display: block;
+    width: 1px;
+    background: #dfe4ed;
+    position: absolute;
+    left: 300px;
+    top: 0px;
+    height: 100%;
+}
+
+.sidebar-large.panel.panel-with-sidebar .panel-sidebar {
+    float: left;
+    width: 300px;
+    padding: 25px;
+    margin-bottom: -25px;
+}
+
+.sidebar-large.panel.panel-with-sidebar .panel-heading, .sidebar-large.panel.panel-with-sidebar .panel-body, .sidebar-large.panel.panel-with-sidebar .panel-footer {
+    margin-left: 300px;
+}
+
+.sidebar-large.panel.panel-with-sidebar.panel-with-right-sidebar:before {
+    left: auto;
+    right: 300px;
+}
+
+.sidebar-large.panel.panel-with-sidebar.panel-with-right-sidebar .panel-sidebar {
+    float: right;
+}
+
+.sidebar-large.panel.panel-with-sidebar.panel-with-right-sidebar .panel-heading, .sidebar-large.panel.panel-with-sidebar.panel-with-right-sidebar .panel-body, .sidebar-large.panel.panel-with-sidebar.panel-with-right-sidebar .panel-footer {
+    margin-left: 0px;
+    margin-right: 300px;
+}
