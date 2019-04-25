@@ -4,6 +4,10 @@ ru:
       create: "Создать"
       update: "Обновить"
 
+  time:
+    formats:
+      long: '%d.%m.%Y %H:%M'
+
   mini_rocket:
     page_title:
       default: Панель администратора

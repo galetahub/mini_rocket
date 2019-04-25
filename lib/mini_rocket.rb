@@ -12,7 +12,6 @@ module MiniRocket
   autoload :FormProxy, 'mini_rocket/form_proxy'
   autoload :FilterProxy, 'mini_rocket/filter_proxy'
   autoload :Formatters, 'mini_rocket/formatters'
-  autoload :UrlBuilder, 'mini_rocket/url_builder'
   autoload :Titleizer, 'mini_rocket/titleizer'
   autoload :ScopedQuery, 'mini_rocket/scoped_query'
   autoload :SortingQuery, 'mini_rocket/sorting_query'

@@ -7,7 +7,7 @@ a.sidebar-toggle href='#' data-toggle='push-menu' role='button' data-turbolinks=
     // Messages: style can be found in dropdown.less
     li.dropdown.messages-menu
       a.dropdown-toggle(href='#' data-toggle='dropdown')
-        i.fa.fa-envelope-o
+        i.fas.fa-envelope
         span.label.label-success 4
       ul.dropdown-menu
         li.header You have 4 messages
@@ -18,52 +18,52 @@ a.sidebar-toggle href='#' data-toggle='push-menu' role='button' data-turbolinks=
               // start message
               a(href='#')
                 .pull-left
-                  img.img-circle(src='../public/images/user8-128x128.jpg' alt='User Image')
+                  / img.img-circle(src='../public/images/user8-128x128.jpg' alt='User Image')
                 h4
                   | Support Team
                   small
-                    i.fa.fa-clock-o
+                    i.fas.fa-clock-o
                     |  5 mins
                 p Why not buy a new awesome theme?
             // end message
             li
               a(href='#')
                 .pull-left
-                  img.img-circle(src='../public/images/user3-128x128.jpg' alt='User Image')
+                  / img.img-circle(src='../public/images/user3-128x128.jpg' alt='User Image')
                 h4
                   | Admin Design Team
                   small
-                    i.fa.fa-clock-o
+                    i.fas.fa-clock-o
                     |  2 hours
                 p Why not buy a new awesome theme?
             li
               a(href='#')
                 .pull-left
-                  img.img-circle(src='../public/images/user4-128x128.jpg' alt='User Image')
+                  / img.img-circle(src='../public/images/user4-128x128.jpg' alt='User Image')
                 h4
                   | Developers
                   small
-                    i.fa.fa-clock-o
+                    i.fas.fa-clock-o
                     |  Today
                 p Why not buy a new awesome theme?
             li
               a(href='#')
                 .pull-left
-                  img.img-circle(src='../public/images/user3-128x128.jpg' alt='User Image')
+                  / img.img-circle(src='../public/images/user3-128x128.jpg' alt='User Image')
                 h4
                   | Sales Department
                   small
-                    i.fa.fa-clock-o
+                    i.fas.fa-clock-o
                     |  Yesterday
                 p Why not buy a new awesome theme?
             li
               a(href='#')
                 .pull-left
-                  img.img-circle(src='../public/images/user4-128x128.jpg' alt='User Image')
+                  / img.img-circle(src='../public/images/user4-128x128.jpg' alt='User Image')
                 h4
                   | Reviewers
                   small
-                    i.fa.fa-clock-o
+                    i.fas.fa-clock-o
                     |  2 days
                 p Why not buy a new awesome theme?
         li.footer
@@ -71,7 +71,7 @@ a.sidebar-toggle href='#' data-toggle='push-menu' role='button' data-turbolinks=
     // Notifications: style can be found in dropdown.less
     li.dropdown.notifications-menu
       a.dropdown-toggle(href='#' data-toggle='dropdown')
-        i.fa.fa-bell-o
+        i.fas.fa-bell
         span.label.label-warning 10
       ul.dropdown-menu
         li.header You have 10 notifications
@@ -80,31 +80,31 @@ a.sidebar-toggle href='#' data-toggle='push-menu' role='button' data-turbolinks=
           ul.menu
             li
               a(href='#')
-                i.fa.fa-users.text-aqua
+                i.fas.fa-users.text-aqua
                 |  5 new members joined today
             li
               a(href='#')
-                i.fa.fa-warning.text-yellow
+                i.fas.fa-warning.text-yellow
                 |  Very long description here that may not fit into the
                 |                       page and may cause design problems
             li
               a(href='#')
-                i.fa.fa-users.text-red
+                i.fas.fa-users.text-red
                 |  5 new members joined
             li
               a(href='#')
-                i.fa.fa-shopping-cart.text-green
+                i.fas.fa-shopping-cart.text-green
                 |  25 sales made
             li
               a(href='#')
-                i.fa.fa-user.text-red
+                i.fas.fa-user.text-red
                 |  You changed your username
         li.footer
           a(href='#') View all
     // Tasks: style can be found in dropdown.less
     li.dropdown.tasks-menu
       a.dropdown-toggle(href='#' data-toggle='dropdown')
-        i.fa.fa-flag-o
+        i.fas.fa-flag
         span.label.label-danger 9
       ul.dropdown-menu
         li.header You have 9 tasks
@@ -166,19 +166,19 @@ a.sidebar-toggle href='#' data-toggle='push-menu' role='button' data-turbolinks=
           li
             = link_to main_app.root_path, class: 'dropdown-item' do
               i.dropdown-icon.icmn-user
-              = t('cleancms.label.home')
+              = t('mini_rocket.label.home')
 
           li
             = link_to main_app.manage_root_path, class: 'dropdown-item' do
               i.dropdown-icon.icmn-circle-right
-              = t('cleancms.label.system_dashboard')
+              = t('mini_rocket.label.system_dashboard')
 
           li
             = link_to main_app.manage_settings_path, class: 'dropdown-item' do
               i.dropdown-icon.icmn-circle-right
-              = t('cleancms.label.settings')
+              = t('mini_rocket.label.settings')
 
           li
             = link_to main_app.destroy_admin_user_session_path, class: 'dropdown-item', method: :delete do
               i.dropdown-icon.icmn-exit
-              = t('cleancms.label.logout')
+              = t('mini_rocket.label.logout')

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MiniRocket
   # Sort scope via params sort_column=id and sort_mode=desc
   #

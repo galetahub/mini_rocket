@@ -20,6 +20,9 @@ module MiniRocket
     VIEWS_PATTERN = ':action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}'
 
     included do
+      include MiniRocket::Controller::BaseHelpers
+      include MiniRocket::Controller::UrlHelpers
+
       layout MiniRocket::Controller::LAYOUT
 
       before_action :setup_cleancms_views_path
@@ -27,7 +30,8 @@ module MiniRocket
       responders :flash, :http_cache
       inherit_resources
 
-      helper_method :rocket_builder, :parent?
+      helper_method :rocket_builder, :parent?, :mini_rocket?, :scoped_collection, :sortable_collection,
+                    :collection_or_resource_path, :cancel_path, :collection_or_parent_path
 
       class_attribute :rocket_store, instance_writer: false
       self.rocket_store = {}
@@ -60,16 +64,6 @@ module MiniRocket
         rocket_builder.build_form(options, &block)
       end
 
-      def create(options = {}, &block)
-        options = { only: [:new, :create] }.merge!(options)
-        form(options, &block)
-      end
-
-      def update(options = {}, &block)
-        options = { only: [:edit, :update, :destroy] }.merge!(options)
-        form(options, &block)
-      end
-
       def filter(options = {}, &block)
         rocket_builder.build_filter(options, &block)
       end
@@ -93,18 +87,6 @@ module MiniRocket
       def rocket_builder
         rocket_store[controller_name] ||= ActionBuilder.new
       end
-    end
-
-    def mini_rocket?
-      true
-    end
-
-    protected
-
-    # Parent is always false only true when belongs_to is called.
-    #
-    def parent?
-      false
     end
 
     private

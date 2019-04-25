@@ -3,4 +3,4 @@
     = render partial: "nested_item_fields", locals: { form: f, builder: builder }
 
   - if builder.multiple?
-    = link_to_add_fields t('cleancms.label.add'), form, builder.method_name, { locals: { builder: builder } }, { class: 'btn btn-info pull-left' }
+    = link_to_add_fields t('mini_rocket.label.add'), form, builder.method_name, { locals: { builder: builder } }, { class: 'btn btn-info pull-left' }

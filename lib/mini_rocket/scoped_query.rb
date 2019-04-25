@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MiniRocket
   # Apply active scope to collection query
   #
@@ -23,6 +25,7 @@ module MiniRocket
 
     def active_scope
       return unless @builder.scopes?
+
       @active_scope ||= @builder.scopes.find_active(@params)
     end
   end

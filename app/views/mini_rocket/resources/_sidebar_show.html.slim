@@ -1,5 +1,5 @@
 .sidebar-show
-  h6 = t('cleancms.label.actions')
+  h6 = t('mini_rocket.label.actions')
   ul.sidebar-buttons
     = render partial: 'resource_actions', locals: { resource: resource }
 
@@ -8,9 +8,9 @@
     - if rocket_builder.new?
       li.dropdown-item
         i.dropdown-icon.icmn-plus3
-        = link_to t('cleancms.label.add_resource'), new_resource_path, class: 'link-add'
+        = link_to t('mini_rocket.label.add_resource'), new_resource_path, class: 'link-add'
 
     - if rocket_builder.index?
       li.dropdown-item
         i.dropdown-icon.icmn-arrow-left7
-        = link_to t('cleancms.label.back'), collection_path, class: 'link-back'
+        = link_to t('mini_rocket.label.back'), collection_path, class: 'link-back'

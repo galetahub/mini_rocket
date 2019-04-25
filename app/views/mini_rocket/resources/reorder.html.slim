@@ -6,13 +6,13 @@ nav.top-menu
     .menu-info-block
       .pull-left
         h3
-          = t('cleancms.label.reorder')
+          = t('mini_rocket.label.reorder')
           | &nbsp;
           = resource_class.model_name.human
 
       .pull-right
-        = button_tag t('cleancms.label.save'), class: 'btn btn-primary mr10', id: 'reorder-save'
-        = link_to t('cleancms.label.cancel'), collection_path, class: 'btn', id: 'reorder-cancel'
+        = button_tag t('mini_rocket.label.save'), class: 'btn btn-primary mr10', id: 'reorder-save'
+        = link_to t('mini_rocket.label.cancel'), collection_path, class: 'btn', id: 'reorder-cancel'
 
 section.page-content class="reorder-#{resource_collection_name}"
   section.page-content-inner

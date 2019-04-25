@@ -1,3 +1,5 @@
+- rocket_builder.index.call
+
 section.panel.panel-with-borders class="#{resource_collection_name}"
   .panel-heading
     = render partial: 'collection_actions'
@@ -10,7 +12,6 @@ section.panel.panel-with-borders class="#{resource_collection_name}"
     .row
       = render partial: 'scopes' if rocket_builder.scopes?
     .row
-
       .col-lg-12.margin-bottom-50
         table.table.table-hover.dataTable
           thead.thead-default
@@ -19,11 +20,11 @@ section.panel.panel-with-borders class="#{resource_collection_name}"
                 = table_column_tag column do
                   = column.render_title(resource_class)
           tbody
-            = render partial: 'resource', collection: collection, as: :record
+            = render partial: 'resource', collection: sortable_collection, as: :record
 
     - if false#rocket_builder.index.pagination?
       .row
         .col-md-4
-          .page_entries_info = page_entries_info collection
+          .page_entries_info = page_entries_info sortable_collection
         .col-md-8
-          .page_pagination = paginate collection
+          .page_pagination = paginate sortable_collection
