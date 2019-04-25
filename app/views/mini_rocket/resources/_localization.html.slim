@@ -1,0 +1,13 @@
+.localization.nav-tabs-horizontal
+  ul.nav.nav-tabs
+    - builder.locales.each_with_index do |locale, index|
+      = content_tag :li, class: ['nav-item', (index.zero? ? 'active' : 'noactive')] do
+        = link_to locale, "#localization-tab-#{locale}", data: { toggle: 'tab' }, class: 'nav-link'
+
+  .tab-content.padding-vertical-20
+    - builder.locales.each_with_index do |locale, index|
+      = content_tag :div, class: ['tab-pane', (index.zero? ? 'active' : 'noactive')], id: "localization-tab-#{locale}" do
+        p
+          - builder.inputs.each do |input|
+            = form.input "#{input.name}_#{locale}", input.options
+

@@ -1,0 +1,10 @@
+section.panel.panel-with-sidebar.sidebar-large.panel-with-right-sidebar.panel-with-borders class="model-#{resource_instance_name}"
+  .panel-sidebar
+    = render partial: 'sidebar_show'
+
+  .panel-heading
+    h3 = render_resource_title(resource)
+
+  .panel-body
+    .row
+      = yield

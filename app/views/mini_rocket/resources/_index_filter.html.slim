@@ -1,0 +1,4 @@
+- proxy = MiniRocket::FilterProxy.new(resource_class, parent, self)
+
+#filter.col-lg-12 class="#{proxy.active? ? 'collapsed' : 'collapse'}"
+  = proxy.render(cleancms_builder.filter.html_options, &cleancms_builder.filter.block)

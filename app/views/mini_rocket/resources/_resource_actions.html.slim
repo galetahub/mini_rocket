@@ -1,0 +1,16 @@
+- if cleancms_builder.show? && can?(:show, resource)
+  li.dropdown-item
+    i.dropdown-icon.icmn-eye3
+    = link_to t('cleancms.label.show'), resource_path(resource), class: 'link-show'
+
+- if can? :edit, resource
+  li.dropdown-item
+    i.dropdown-icon.icmn-pencil7
+    = link_to t('cleancms.label.edit'), edit_resource_path(resource), class: 'link-edit'
+
+- if can? :delete, resource
+  li.dropdown-divider
+  li.dropdown-item
+    i.dropdown-icon.icmn-bin3
+    = link_to t('cleancms.label.delete'), resource_path(resource), method: :delete,
+    data: { confirm: t('cleancms.dialog.confirm_delete') }, class: 'link-delete'

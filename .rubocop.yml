@@ -1,3 +1,8 @@
+AllCops:
+  Exclude:
+    - 'app/views/**/*.slim'
+    - 'app/views/**/**/*.slim'
+
 Style/Documentation:
   Enabled: false
 

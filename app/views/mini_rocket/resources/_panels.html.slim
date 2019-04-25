@@ -1,0 +1,8 @@
+- if target.panels?
+  - target.panels.each do |panel|
+    section.panel
+      .panel-heading
+        h4 = panel.render_title(resource_class)
+
+      .panel-body
+        = panel.render(resource, self)

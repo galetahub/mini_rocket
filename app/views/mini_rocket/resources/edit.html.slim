@@ -1,0 +1,21 @@
+- proxy = MiniRocket::FormProxy.new(resource, parent? ? parent : nil, self)
+
+section.panel.panel-with-borders class="model-#{resource_instance_name}"
+  .panel-heading
+    - if parent?
+      .heading-buttons.pull-right
+        = link_to parent_path, class: 'btn margin-inline link-back' do
+          i.icmn-arrow-left8
+          = render_resource_title(parent)
+    h3
+      = t('cleancms.label.edit')
+      | &nbsp;
+      = resource_class.model_name.human
+
+  .panel-body
+    .row
+      .col-lg-12
+        .margin-bottom-50
+          = render partial: 'form', locals: { proxy: proxy }
+
+= render partial: 'panels', locals: { target: proxy }

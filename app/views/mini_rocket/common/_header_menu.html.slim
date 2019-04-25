@@ -1,0 +1,62 @@
+ul.sidebar-menu(data-widget='tree')
+  li
+    a(href='/html/index.html')
+      i.fa.fa-file
+      span Example
+  li
+    a(href='/html/clients.html')
+      i.fa.fa-users
+      span Clients
+      small.label.pull-right.bg-yellow 12
+      small.label.pull-right.bg-green 16
+      small.label.pull-right.bg-red 5
+  li.active
+    a(href='/html/contacts.html')
+      i.fa.fa-address-card
+      span Contacts
+      span.pull-right-container
+        small.label.pull-right.bg-green new
+  li
+    a(href='/html/profile.html')
+      i.fa.fa-user
+      span Profile
+  li
+    a(href='/html/info.html')
+      i.fa.fa-info
+      span Information
+  li.treeview
+    a(href='#')
+      i.fa.fa-share
+      span Dropdown
+      span.pull-right-container
+        i.fa.fa-angle-left.pull-right
+    ul.treeview-menu
+      li
+        a(href='#')
+          i.fa.fa-circle-o
+          |  Level One
+      li
+        a(href='#')
+          i.fa.fa-circle-o
+          |  Level One
+      li
+        a(href='#')
+          i.fa.fa-circle-o
+          |  Level One
+      li
+        a(href='#')
+          i.fa.fa-circle-o
+          |  Level One
+  li.header LABELS
+  li
+    a(href='#')
+      i.fa.fa-circle-o.text-red
+      span Important
+  li
+    a(href='#')
+      i.fa.fa-circle-o.text-yellow
+      span Warning
+  li
+    a(href='#')
+      i.fa.fa-circle-o.text-aqua
+      span Information

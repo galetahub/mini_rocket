@@ -1,0 +1,3 @@
+$ ->
+  Global.init()
+  Global.initTurbolinks()

@@ -1,0 +1,67 @@
+ru:
+  helpers:
+    submit:
+      create: "Создать"
+      update: "Обновить"
+
+  mini_rocket:
+    page_title:
+      default: Панель администратора
+      login: Страница входа
+      resources:
+        new: "Создать %{resource_name}"
+        edit: "Редактировать %{resource_name}"
+        index: "%{resource_name}"
+        show: "Просмотреть %{resource_name}"
+
+    label:
+      add_resource: Создать
+      add_new: Добавить
+      add: Добавить
+      cancel: Отмена
+      new: Создать
+      create: Отправить
+      settings: Настройки
+      edit: Редактировать
+      update: Обновить
+      delete: Удалить
+      show: Показать
+      action: Дейтсвие
+      back: Назад
+      home: Домой
+      system_dashboard: Системная панель
+      logout: Выход
+      actions: Дейтсвия
+      reorder: Изменить порядок
+      save: Сохранить
+      reset: Очистить
+      filter: Поиск
+
+    buttons:
+      new: Создать
+      create: Создать
+      edit: Обновить
+      update: Обновить
+
+    dialog:
+      confirm_delete: Вы уверены, что хотите удалить эту запись? Это действие не может быть отменено!
+
+    form:
+      inputs:
+        general: 'Общие'
+        details: 'Детали'
+
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} был успешно создан."
+        alert: "Произошли некоторые ошибки при создании %{resource_name}."
+      update:
+        notice: "%{resource_name} был успешно обновлен."
+        alert: "Произошли некоторые ошибки при обновлении %{resource_name}."
+      destroy:
+        notice: "%{resource_name} Был успешно удален."
+        alert: "%{resource_name} не может быть удалено."
+      reposition:
+        notice: "%{resource_name} был успешно обновлен."
+        alert: "Произошли некоторые ошибки при обновлении %{resource_name}."

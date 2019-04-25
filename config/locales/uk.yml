@@ -1,0 +1,67 @@
+uk:
+  helpers:
+    submit:
+      create: "Створити"
+      update: "Оновити"
+
+  mini_rocket:
+    page_title:
+      default: Панель адміністратора
+      login: Сторінка входу
+      resources:
+        new: "Створити нову %{resource_name}"
+        edit: "Редагувати %{resource_name}"
+        index: "%{resource_name}"
+        show: "Перегляд %{resource_name}"
+
+    label:
+      add_resource: Створити нову
+      add_new: Додати нову
+      add: Додати
+      cancel: Відміна
+      new: Створити
+      create: Відправити
+      settings: Налаштування
+      edit: Редагувати
+      update: Оновити
+      delete: Видалити
+      show: Перегляд
+      action: Дія
+      back: Назад
+      home: Додому
+      system_dashboard: Системна панель
+      logout: Вийти
+      actions: Дії
+      reorder: Змінити порядок
+      save: Зберегти
+      reset: Очистити
+      filter: Пошук
+
+    buttons:
+      new: Створити
+      create: Створити
+      edit: Оновити
+      update: Оновити
+
+    dialog:
+      confirm_delete: Ви впевнені, що хочете видалити цей запис? Ця дія не може бути відновлена!
+
+    form:
+      inputs:
+        general: 'Загальні'
+        details: 'Деталі'
+
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} був успішно створений."
+        alert: "Деякі помилки сталися при створенні %{resource_name}."
+      update:
+        notice: "%{resource_name} був успішно оновлений."
+        alert: "Деякі помилки сталися при оновленні %{resource_name}."
+      destroy:
+        notice: "%{resource_name} був успішно видалений."
+        alert: "%{resource_name} не може бути видалений."
+      reposition:
+        notice: "%{resource_name} був успішно оновлений."
+        alert: "Деякі помилки сталися при оновленні %{resource_name}."

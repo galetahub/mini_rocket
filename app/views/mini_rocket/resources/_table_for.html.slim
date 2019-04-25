@@ -1,0 +1,15 @@
+.row
+  .col-lg-12
+    = content_tag(:table, component.html_options) do
+      thead.thead-default
+        tr
+          - component.columns.each do |column|
+            = table_column_tag column do
+              = column.render_title(resource_class)
+      tbody
+        - component.collection.each do |record|
+          = content_tag :tr, id: dom_id(record) do
+            - component.columns.each do |column|
+              td = column.render(record, self)
+
+    = self.instance_exec(&component.bottom_block) if component.bottom_block

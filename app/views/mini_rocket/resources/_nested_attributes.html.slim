@@ -1,0 +1,6 @@
+.nested_attributes
+  = form.simple_fields_for builder.method_name do |f|
+    = render partial: "nested_item_fields", locals: { form: f, builder: builder }
+
+  - if builder.multiple?
+    = link_to_add_fields t('cleancms.label.add'), form, builder.method_name, { locals: { builder: builder } }, { class: 'btn btn-info pull-left' }

@@ -1,0 +1,8 @@
+.col-lg-12.margin-bottom-50
+  table.table.table-hover.thead-default
+    tbody
+      - rows.each do |row|
+        tr
+          td
+            strong = row.render_title(resource_class)
+          td = row.render(resource, self)

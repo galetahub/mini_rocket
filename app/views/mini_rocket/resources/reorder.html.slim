@@ -1,0 +1,21 @@
+nav.top-menu
+  .menu
+    .menu-user-block
+      = render partial: 'cleancms/common/user_dropdown'
+
+    .menu-info-block
+      .pull-left
+        h3
+          = t('cleancms.label.reorder')
+          | &nbsp;
+          = resource_class.model_name.human
+
+      .pull-right
+        = button_tag t('cleancms.label.save'), class: 'btn btn-primary mr10', id: 'reorder-save'
+        = link_to t('cleancms.label.cancel'), collection_path, class: 'btn', id: 'reorder-cancel'
+
+section.page-content class="reorder-#{resource_collection_name}"
+  section.page-content-inner
+    #reorder.sort-wrapper data-url="#{reposition_collection_path}"
+      .sort-items-holder
+        == cleancms_builder.reorder.render(self)

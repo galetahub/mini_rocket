@@ -1,0 +1,67 @@
+en:
+  helpers:
+    submit:
+      create: "Create"
+      update: "Update"
+
+  mini_rocket:
+    page_title:
+      default: Admin panel
+      login: Login page
+      resources:
+        new: "Create new %{resource_name}"
+        edit: "Edit %{resource_name}"
+        index: "%{resource_name}"
+        show: "View %{resource_name}"
+
+    label:
+      add_resource: Create new
+      add_new: Add new
+      add: Add
+      cancel: Cancel
+      new: Create
+      create: Create
+      settings: Settings
+      edit: Edit
+      update: Update
+      delete: Delete
+      show: Show
+      action: Action
+      back: Back
+      home: Home
+      system_dashboard: System dashboard
+      logout: Logout
+      actions: Actions
+      reorder: Reorder
+      save: Save
+      reset: Reset
+      filter: Filter
+
+    buttons:
+      new: Create
+      create: Create
+      edit: Update
+      update: Update
+
+    dialog:
+      confirm_delete: Are you sure you want to delete this record? This action cannot be undone!
+
+    form:
+      inputs:
+        general: 'General'
+        details: 'Details'
+
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} was successfully created."
+        alert: "Some errors occurred when creating %{resource_name}."
+      update:
+        notice: "%{resource_name} was successfully updated."
+        alert: "Some errors occurred when updating %{resource_name}."
+      destroy:
+        notice: "%{resource_name} was successfully destroyed."
+        alert: "%{resource_name} could not be destroyed."
+      reposition:
+        notice: "%{resource_name} was successfully created."
+        alert: "Some errors occurred when creating %{resource_name}."

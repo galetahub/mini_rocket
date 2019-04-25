@@ -1,0 +1,5 @@
+.btn-group
+  button.btn.btn-sm.dropdown-toggle data-toggle="dropdown"
+    = t('cleancms.label.action')
+  ul.dropdown-menu.dropdown-right
+    = render partial: 'resource_actions', locals: { resource: resource }

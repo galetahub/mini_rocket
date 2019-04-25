@@ -1,0 +1,11 @@
+- if flash[:notice]
+  javascript:
+    $(document).ready(function(){
+      $.notify({message: "#{flash[:notice]}", icon: 'fa fa-paw'}, {type: "success"});
+    });
+
+- elsif flash[:alert]
+  javascript:
+    $(document).ready(function(){
+      $.notify({message: "#{flash[:alert]}", icon: 'fa fa-paw'}, {type: "warning"});
+    });

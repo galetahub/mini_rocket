@@ -1,0 +1,21 @@
+doctype html
+html lang="#{I18n.locale}"
+  head
+    = render partial: 'mini_rocket/common/header'
+    = render partial: 'mini_rocket/common/head'
+  body.hold-transition.skin-black.sidebar-mini
+    .wrapper
+      header.main-header
+        = render partial: 'mini_rocket/common/logo'
+
+        nav.navbar.navbar-static-top
+          = render partial: 'mini_rocket/common/sidebar_menu'
+
+      aside.main-sidebar
+        section.sidebar
+          = render partial: 'mini_rocket/common/header_menu'
+
+      .content-wrapper
+        = yield
+
+    = render partial: 'mini_rocket/common/notifications'

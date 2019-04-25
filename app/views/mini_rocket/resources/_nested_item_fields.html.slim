@@ -1,0 +1,11 @@
+.nested_item_field.form-group.row
+  - builder.inputs.each do |input|
+    .col-md-3
+      = form.label input.name
+      = form.input_field input.name, input.options
+
+  .col-md-1.nested_delete_link
+    = form.hidden_field :_destroy, class: 'nested_delete_field' if form.object.persisted?
+    = link_to '#delete', class: 'nested_delete_handler' do
+      i.icmn-cross
+
