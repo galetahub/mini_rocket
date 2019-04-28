@@ -2,17 +2,9 @@
 
 module MiniRocket
   class ActionBuilder
-    attr_reader :index, :form, :show, :filter, :navigation, :sidebars, :reorder, :scopes
+    attr_reader :index, :form, :show, :filter, :navigation, :sidebars, :reorder, :scopes, :permited_params
 
     def initialize
-      @index = nil
-      @form = nil
-      @show = nil
-      @filter = nil
-      @navigation = nil
-      @reorder = nil
-      @scopes = nil
-
       @sidebars = []
       @options = {}
     end
@@ -48,6 +40,10 @@ module MiniRocket
 
     def build_navigation(options = {}, &block)
       @navigation = Actions::Navigation.new(options, &block)
+    end
+
+    def build_permited_params(*args)
+      @permited_params = Actions::PermitedParams.new(*args)
     end
 
     def sidebars_via_action(action_name)

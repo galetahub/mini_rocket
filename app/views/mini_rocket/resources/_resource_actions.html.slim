@@ -10,7 +10,7 @@
       i.far.fa-edit
       span = t('mini_rocket.label.edit')
 
-- if can? :delete, resource
+- if can? :destroy, resource
   li.dropdown-divider
   li.dropdown-item
     = link_to resource_path(resource), method: :delete, data: { confirm: t('mini_rocket.dialog.confirm_delete') }, class: 'link-delete' do

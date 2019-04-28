@@ -14,6 +14,7 @@ module MiniRocket
       end
 
       def sortable_collection
+        # page(params[:page]) if cleancms_builder.index.pagination?
         @sortable_collection ||= SortingQuery.new(collection, params, rocket_builder).to_query
       end
 

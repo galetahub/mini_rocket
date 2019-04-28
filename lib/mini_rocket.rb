@@ -28,6 +28,7 @@ module MiniRocket
     autoload :Navigation, 'mini_rocket/actions/navigation'
     autoload :Reorder, 'mini_rocket/actions/reorder'
     autoload :Scopes, 'mini_rocket/actions/scopes'
+    autoload :PermitedParams, 'mini_rocket/actions/permited_params'
   end
 
   module Components

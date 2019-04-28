@@ -80,6 +80,16 @@ module MiniRocket
         rocket_builder.build_navigation(options, &block)
       end
 
+      def permit_params(*args)
+        rocket_builder.build_permited_params(*args)
+
+        define_method :build_resource_params do
+          rocket_builder.permited_params.permit(resource_class, params)
+        end
+
+        private :build_resource_params
+      end
+
       def rocket_options(options = {})
         rocket_builder.update_options(options)
       end
