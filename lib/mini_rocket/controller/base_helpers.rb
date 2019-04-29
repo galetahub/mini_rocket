@@ -10,7 +10,7 @@ module MiniRocket
       end
 
       def scoped_collection
-        @scoped_collection ||= ScopedQuery.new(end_of_association_chain, params, rocket_builder).to_query
+        @scoped_collection ||= ScopedQuery.new(sortable_collection, params, rocket_builder).to_query
       end
 
       def sortable_collection
@@ -18,9 +18,9 @@ module MiniRocket
       end
 
       def paginated_collection
-        return collection unless rocket_builder.index.pagination?
+        return end_of_association_chain unless rocket_builder.index.pagination?
 
-        collection.page(params[:page]).per(rocket_builder.index.per_page)
+        end_of_association_chain.page(params[:page]).per(rocket_builder.index.per_page)
       end
 
       def parent?
