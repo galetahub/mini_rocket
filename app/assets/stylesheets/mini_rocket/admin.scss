@@ -210,7 +210,7 @@ body {
   max-height: calc(100vh - 50px);
   overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 25px;
+  padding: 16px 16px 80px 16px;
 }
 .layout-top-nav {
   .content-wrapper, .main-footer {
@@ -5945,4 +5945,10 @@ table.text-center {
 }
 .margin-left-10 {
   margin-left: 10px;
+}
+.margin-bottom-50 {
+  margin-bottom: 50px;
+}
+.margin-bottom-30 {
+  margin-bottom: 30px;
 }

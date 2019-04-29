@@ -11,6 +11,10 @@ module MiniRocket
         @options[:pagination] != false
       end
 
+      def per_page
+        @options[:per_page] || MiniRocket.paginates_per
+      end
+
       def call
         reset!
         instance_exec(&@block)

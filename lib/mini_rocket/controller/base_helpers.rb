@@ -14,19 +14,18 @@ module MiniRocket
       end
 
       def sortable_collection
-        # page(params[:page]) if cleancms_builder.index.pagination?
-        @sortable_collection ||= SortingQuery.new(collection, params, rocket_builder).to_query
+        @sortable_collection ||= SortingQuery.new(paginated_collection, params, rocket_builder).to_query
+      end
+
+      def paginated_collection
+        return collection unless rocket_builder.index.pagination?
+
+        collection.page(params[:page]).per(rocket_builder.index.per_page)
       end
 
       def parent?
         !parent.nil?
       end
-
-      # Parent is always false only true when belongs_to is called.
-      #
-      # def parent?
-      #   false
-      # end
 
       def update_collection_order(resource_class, params)
         reorder_params = params.require(:items).map { |item| item.permit(:id, :sort_order) }

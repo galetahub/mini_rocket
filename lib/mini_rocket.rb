@@ -55,6 +55,9 @@ module MiniRocket
   mattr_accessor :sortable
   self.sortable = false
 
+  mattr_accessor :paginates_per
+  self.paginates_per = 25
+
   def self.setup
     yield self
   end

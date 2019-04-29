@@ -6,5 +6,8 @@
  *= require mini_rocket/panel.css
  *= require mini_rocket/dropdowns.css
  *= require mini_rocket/validation.css
+ *= require mini_rocket/pagination.css
+ *= require mini_rocket/table.css
+ *= require mini_rocket/buttons.css
  *= require mini_rocket/skin.css
 */
