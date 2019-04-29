@@ -30,6 +30,10 @@ module MiniRocket
           parent_path
         end
       end
+
+      def controller_namespace
+        @controller_namespace ||= controller_path.split('/')[0]
+      end
     end
   end
 end

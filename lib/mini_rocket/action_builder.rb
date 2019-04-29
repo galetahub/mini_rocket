@@ -66,10 +66,6 @@ module MiniRocket
       !@show.nil?
     end
 
-    def new?
-      true
-    end
-
     def navigation?
       !@navigation.nil?
     end

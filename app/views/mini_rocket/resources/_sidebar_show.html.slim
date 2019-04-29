@@ -5,12 +5,11 @@
 
     li.dropdown-divider
 
-    - if rocket_builder.new?
+    - if controller.available_action?(:new)
       li.dropdown-item
         i.fas.fa-plus
         = link_to t('mini_rocket.label.add_resource'), new_resource_path, class: 'link-add'
 
-    - if rocket_builder.index?
-      li.dropdown-item
-        i.fas.fa-arrow-left
-        = link_to t('mini_rocket.label.back'), collection_path, class: 'link-back'
+    li.dropdown-item
+      i.fas.fa-arrow-left
+      = link_to t('mini_rocket.label.back'), collection_or_parent_path, class: 'link-back'

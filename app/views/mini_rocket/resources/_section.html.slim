@@ -3,6 +3,11 @@ section.panel.panel-with-sidebar.sidebar-large.panel-with-right-sidebar.panel-wi
     = render partial: 'sidebar_show'
 
   .panel-heading
+    - if parent?
+      = link_to parent_path, class: 'parent-link'
+        i.fas.fa-arrow-left.margin-right-5
+        span = render_resource_title(parent)
+
     h3 = render_resource_title(resource)
 
   .panel-body

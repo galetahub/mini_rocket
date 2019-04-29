@@ -31,7 +31,8 @@ module MiniRocket
       inherit_resources
 
       helper_method :rocket_builder, :parent?, :mini_rocket?, :scoped_collection, :sortable_collection,
-                    :collection_or_resource_path, :cancel_path, :collection_or_parent_path
+                    :collection_or_resource_path, :cancel_path, :collection_or_parent_path,
+                    :controller_namespace
 
       class_attribute :rocket_store, instance_writer: false
       self.rocket_store = {}

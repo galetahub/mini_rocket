@@ -17,8 +17,8 @@ module MiniRocket
       @params = params
     end
 
-    def cleancms?
-      @cleancms ||= @controller.respond_to?(:cleancms?)
+    def mini_rocket?
+      @mini_rocket ||= @controller.respond_to?(:mini_rocket?)
     end
 
     def render
@@ -26,12 +26,13 @@ module MiniRocket
     end
 
     def translation_key
-      :"cleancms.page_title.#{controller_name}.#{action_name}"
+      :"mini_rocket.page_title.#{controller_name}.#{action_name}"
     end
 
     def fallback_key
-      return unless cleancms?
-      :"cleancms.page_title.resources.#{action_name}"
+      return unless mini_rocket?
+
+      :"mini_rocket.page_title.resources.#{action_name}"
     end
 
     def action_name
@@ -43,7 +44,7 @@ module MiniRocket
     end
 
     def context
-      return {} unless cleancms?
+      return {} unless mini_rocket?
 
       normalize_assigns(@controller.view_assigns).merge(
         resource_name: @controller.send(:resource_human_name)

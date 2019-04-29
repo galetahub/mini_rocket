@@ -1,4 +1,4 @@
-- if controller.respond_to?(:new)
+- if controller.available_action?(:new)
   = link_to new_resource_path, class: 'pull-right btn btn-primary' do
     i.fas.fa-plus.margin-right-5
     = t('mini_rocket.label.add_resource')

@@ -1,0 +1,23 @@
+.btn-group
+  button.btn.btn-sm.dropdown-toggle data-toggle="dropdown"
+    = t('mini_rocket.label.action')
+  ul.dropdown-menu.dropdown-right
+    - if rocket_builder.show? && can?(:show, child)
+      li.dropdown-item
+        = link_to [controller_namespace, resource, child], class: 'link-show' do
+          i.far.fa-eye
+          span = t('mini_rocket.label.show')
+
+    - if can? :edit, child
+      li.dropdown-item
+        = link_to [:edit, controller_namespace, resource, child], class: 'link-edit' do
+          i.far.fa-edit
+          span = t('mini_rocket.label.edit')
+
+    - if can? :destroy, child
+      li.dropdown-divider
+      li.dropdown-item
+        = link_to [controller_namespace, resource, child], method: :delete, data: { confirm: t('mini_rocket.dialog.confirm_delete') }, class: 'link-delete' do
+          i.fas.fa-trash
+          span = t('mini_rocket.label.delete')
+
