@@ -14,16 +14,21 @@ module MiniRocket
 
       def to_param
         return nil if @id.zero?
-        @id.to_s
+
+        uuid
+      end
+
+      def uuid
+        @uuid ||= @id.to_s
       end
 
       def title
-        @title ||= @name.to_s.humanize
+        @title ||= (options[:title] || @name.to_s.humanize)
       end
 
       def configure(collection, params = {})
         @collection = collection
-        @active = ((params[:scope] == @id.to_s) || (params[:scope].blank? && default?))
+        @active = ((params[:scope] == uuid) || (params[:scope].blank? && default?))
       end
 
       def active?
@@ -31,7 +36,7 @@ module MiniRocket
       end
 
       def default?
-        @options[:default]
+        options[:default]
       end
 
       def count
@@ -42,11 +47,13 @@ module MiniRocket
         @collection_scope ||= fetch_collection_scope
       end
 
-      protected
+      private
 
       def fetch_collection_scope
         if @block
           @block.call(@collection)
+        elsif @collection.respond_to?(name)
+          @collection.public_send(name)
         else
           @collection
         end

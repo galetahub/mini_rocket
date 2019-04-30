@@ -30,9 +30,9 @@ module MiniRocket
       responders :flash, :http_cache
       inherit_resources
 
-      helper_method :rocket_builder, :parent?, :mini_rocket?, :scoped_collection, :sortable_collection,
-                    :collection_or_resource_path, :cancel_path, :collection_or_parent_path,
-                    :controller_namespace
+      helper_method :rocket_builder, :parent?, :mini_rocket?, :controller_namespace,
+                    :scoped_collection, :sortable_collection, :paginated_collection,
+                    :collection_or_resource_path, :cancel_path, :collection_or_parent_path
 
       class_attribute :rocket_store, instance_writer: false
       self.rocket_store = {}

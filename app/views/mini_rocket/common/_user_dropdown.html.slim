@@ -1,28 +1,28 @@
 a.dropdown-toggle data-toggle='dropdown' href="javascript: void(0);" data-turbolinks="false"
   span.avatar.user-image
-    canvas.user-avatar width="25" height="25" data-name="#{current_admin_user.name}"
+    canvas.user-avatar.circular-square width="25" height="25" data-name="#{current_admin_user.name}"
   span.hidden-xs
     = current_admin_user.name
 
 ul.dropdown-menu role="menu"
   li.menu
     li
-      = link_to main_app.root_path, class: 'dropdown-item' do
-        i.dropdown-icon.icmn-user
+      = link_to main_app.root_path, class: 'dropdown-item link-to-home' do
+        i.fa.fa-home
         = t('mini_rocket.label.home')
 
     li
-      = link_to main_app.manage_root_path, class: 'dropdown-item' do
-        i.dropdown-icon.icmn-circle-right
+      = link_to main_app.manage_root_path, class: 'dropdown-item link-to-dashboard' do
+        i.fa.fa-chart-line
         = t('mini_rocket.label.system_dashboard')
 
     li
-      = link_to main_app.manage_settings_path, class: 'dropdown-item' do
-        i.dropdown-icon.icmn-circle-right
+      = link_to main_app.manage_settings_path, class: 'dropdown-item link-to-settings' do
+        i.fa.fa-cog
         = t('mini_rocket.label.settings')
 
     li
-      = link_to main_app.destroy_admin_user_session_path, class: 'dropdown-item', method: :delete do
-        i.dropdown-icon.icmn-exit
+      = link_to main_app.destroy_admin_user_session_path, class: 'dropdown-item link-to-logout', method: :delete do
+        i.fa.fa-sign-out-alt
         = t('mini_rocket.label.logout')
 

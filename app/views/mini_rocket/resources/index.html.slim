@@ -20,11 +20,11 @@ section.panel.panel-with-borders class="#{resource_collection_name}"
                 = table_column_tag column do
                   = column.render_title(resource_class)
           tbody
-            = render partial: 'resource', collection: scoped_collection, as: :record
+            = render partial: 'resource', collection: paginated_collection, as: :record
 
     - if rocket_builder.index.pagination?
       .row.table-footer
         .col-md-4
-          .page_entries_info = page_entries_info scoped_collection
+          .page_entries_info = page_entries_info paginated_collection
         .col-md-8
-          .page_pagination = paginate scoped_collection, views_prefix: 'mini_rocket'
+          .page_pagination = paginate paginated_collection, views_prefix: 'mini_rocket'

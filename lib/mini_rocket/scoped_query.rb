@@ -12,7 +12,7 @@ module MiniRocket
 
     def to_query
       if active_scope?
-        active_scope.configure(@builder.collection, @params)
+        active_scope.configure(@scope, @params)
         active_scope.collection_scope
       else
         @scope

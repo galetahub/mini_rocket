@@ -2,10 +2,10 @@
 
 .nav-tabs-horizontal.col-lg-12.mb15
   ul.nav.nav-tabs role="tablist"
-    - rocket_builder.scopes.render(end_of_association_chain, params) do |scope|
+    - rocket_builder.scopes.render(collection, params) do |scope|
       li.nav-item
         = link_to url_for(scope: scope.to_param), class: ['nav-link', scope.active? ? 'active' : 'noactive'] do
           span
-            = scope.name
+            = scope.title
           small
             | &nbsp;(#{scope.count})

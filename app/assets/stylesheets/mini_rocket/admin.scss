@@ -5952,3 +5952,10 @@ table.text-center {
 .margin-bottom-30 {
   margin-bottom: 30px;
 }
+
+.circular-square {
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+}
