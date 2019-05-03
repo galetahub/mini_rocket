@@ -10,7 +10,7 @@ class ReorderableItems extends ReorderableTable
 
     @save_button = $('#reorder-save')
     @save_button.attr 'disabled', true
-    @save_button.off('click.cleancms').on('click.cleancms', (e) =>
+    @save_button.off('click.mini_rocket').on('click.mini_rocket', (e) =>
       this.save()
       return false
     )

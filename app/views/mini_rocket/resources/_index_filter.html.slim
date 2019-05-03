@@ -1,4 +1,4 @@
-- proxy = MiniRocket::FilterProxy.new(resource_class, parent, self)
+- proxy = MiniRocket::FilterProxy.new(resource_class, parent? ? parent : nil, self)
 
-#filter.col-lg-12 class="#{proxy.active? ? 'collapsed' : 'collapse'}"
+#filter.panel-sidebar
   = proxy.render(rocket_builder.filter.html_options, &rocket_builder.filter.block)

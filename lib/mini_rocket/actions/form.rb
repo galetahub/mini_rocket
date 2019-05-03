@@ -5,7 +5,7 @@ module MiniRocket
     class Form < Base
       DEFAULTS = {
         builder: MiniRocket::Controller::FormBuilder,
-        wrapper: :cleancms
+        wrapper: :mini_rocket
       }.freeze
 
       def html_options

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MiniRocket
   module Formatters
     class StringFormat < BaseFormat

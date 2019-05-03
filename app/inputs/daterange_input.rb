@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simple_form'
 
 class DaterangeInput < ::SimpleForm::Inputs::Base

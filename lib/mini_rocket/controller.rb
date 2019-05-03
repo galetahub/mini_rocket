@@ -25,7 +25,7 @@ module MiniRocket
 
       layout MiniRocket::Controller::LAYOUT
 
-      before_action :setup_cleancms_views_path
+      before_action :setup_mini_rocket_views_path
 
       responders :flash, :http_cache
       inherit_resources
@@ -106,7 +106,7 @@ module MiniRocket
       rocket_store[controller_name]
     end
 
-    def setup_cleancms_views_path
+    def setup_mini_rocket_views_path
       append_view_path ::ActionView::FileSystemResolver.new(
         MiniRocket::Engine.root.join(VIEWS_PATH),
         VIEWS_PATTERN

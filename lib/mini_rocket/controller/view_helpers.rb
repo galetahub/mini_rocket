@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MiniRocket
   module Controller
     module ViewHelpers
@@ -28,7 +30,7 @@ module MiniRocket
         MiniRocket::Titleizer.record_to_title(resource)
       end
 
-      def render_cleancms_page_title
+      def render_mini_rocket_page_title
         MiniRocket::Titleizer.new(controller, params).render
       end
     end

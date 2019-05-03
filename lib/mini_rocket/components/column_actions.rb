@@ -4,7 +4,7 @@ module MiniRocket
   module Components
     class ColumnActions < Column
       def title
-        @title ||= I18n.t('cleancms.label.actions')
+        @title ||= I18n.t('mini_rocket.label.actions')
       end
 
       def render(resource, template)

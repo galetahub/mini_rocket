@@ -1,16 +1,16 @@
 - rocket_builder.index.call
 
-section.panel.panel-with-borders class="#{resource_collection_name}"
+= content_tag :section, class: ['panel panel-with-borders', resource_collection_name, rocket_builder.filter? ? 'panel-with-sidebar panel-with-right-sidebar' : 'panel-without-sidebar'] do
+  = render partial: 'index_filter' if rocket_builder.filter?
+
   .panel-heading
     = render partial: 'collection_actions'
-
     h3 = resource_class.model_name.human
 
   .panel-body
-    .row
-      = render(partial: 'index_filter') if rocket_builder.filter?
-    .row
-      = render partial: 'scopes' if rocket_builder.scopes?
+    - if rocket_builder.scopes?
+      .row
+        = render partial: 'scopes'
     .row
       .col-lg-12.margin-bottom-30
         table.table.table-hover.dataTable

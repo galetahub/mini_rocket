@@ -16,7 +16,7 @@ module MiniRocket
         url: template.collection_path,
         required: false,
         defaults: { required: false },
-        wrapper: :cleancms_search
+        wrapper: :mini_rocket_search
       }.merge!(options)
 
       super

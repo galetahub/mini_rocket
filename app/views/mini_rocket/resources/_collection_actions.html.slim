@@ -4,11 +4,6 @@
     = t('mini_rocket.label.add_resource')
 
 - if rocket_builder.reorder?
-  = link_to reorder_collection_path, class: 'pull-right btn mr10' do
+  = link_to reorder_collection_path, class: 'pull-right btn margin-right-10' do
     i.fas.fa-sort.margin-right-5
     = t('mini_rocket.label.reorder')
-
-- if rocket_builder.filter?
-  = link_to '#filter', class: 'pull-right btn mr10', data: { toggle: 'collapse' }, role: 'button', aria: { controls: 'filter' } do
-    i.fas.fa-search.margin-right-5
-    = t('mini_rocket.label.filter')

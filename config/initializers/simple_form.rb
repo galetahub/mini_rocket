@@ -3,7 +3,7 @@
 require 'simple_form'
 
 SimpleForm.setup do |config|
-  config.wrappers :cleancms, class: 'form-group row', error_class: 'has-danger' do |b|
+  config.wrappers :mini_rocket, class: 'form-group row', error_class: 'has-danger' do |b|
     b.use :html5
     b.use :placeholder
 
@@ -31,11 +31,11 @@ SimpleForm.setup do |config|
     end
   end
 
-  config.wrappers :cleancms_search, class: 'form-group row', error_class: 'has-danger' do |b|
+  config.wrappers :mini_rocket_search, class: 'form-group row', error_class: 'has-danger' do |b|
     b.use :html5
     b.use :placeholder
 
-    b.wrapper tag: :div, class: 'col-md-5' do |c|
+    b.wrapper tag: :div, class: 'col-md-12' do |c|
       c.use :label, class: 'form-control-label'
       c.use :input, class: 'form-control'
       c.use :hint,  wrap_with: { tag: :small, class: 'form-control-hint' }
