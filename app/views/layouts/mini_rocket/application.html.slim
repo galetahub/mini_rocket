@@ -3,7 +3,7 @@ html lang="#{I18n.locale}"
   head
     = render partial: 'mini_rocket/common/header'
     = render partial: 'mini_rocket/common/head'
-  body.hold-transition.skin-black.sidebar-mini
+  body.hold-transition.skin-black.sidebar-mini class="#{cookies[:sidebar_mode] == 'collapse' ? 'sidebar-collapse' : 'sidebar-normal'}"
     .wrapper
       header.main-header
         = render partial: 'mini_rocket/common/logo'

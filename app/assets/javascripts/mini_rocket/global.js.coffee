@@ -86,8 +86,13 @@ class Global
     )
 
   @initAnimations: ->
+    if Cookies.get('sidebar_mode') == 'collapse'
+      $('body').addClass('sidebar-collapse')
+
     $('.sidebar-toggle').click ->
       $('body').toggleClass('sidebar-collapse')
+      mode = if $('body').hasClass('sidebar-collapse') then 'collapse' else 'open'
+      Cookies.set('sidebar_mode', mode, { expires: 365 * 5 })
 
     $('.btn-filter').click ->
       $(this).parent().toggleClass('show')
