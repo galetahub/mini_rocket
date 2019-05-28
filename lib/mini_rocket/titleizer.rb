@@ -47,7 +47,7 @@ module MiniRocket
       return {} unless mini_rocket?
 
       normalize_assigns(@controller.view_assigns).merge(
-        resource_name: @controller.send(:resource_human_name)
+        resource_name: @controller.send(:resource_class).name
       )
     end
 

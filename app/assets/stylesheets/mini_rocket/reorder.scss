@@ -1,0 +1,108 @@
+.js-reorder-handle {
+  cursor: move;
+}
+
+table.js-reorder-table .ui-sortable-helper {
+  display: none;
+  visibility: hidden;
+}
+table.js-reorder-table .ui-sortable-placeholder {
+  background-color: #6a7a84;
+}
+
+.sort-wrapper {
+  display: block;
+}
+.sort-wrapper .sort-title-holder {
+  display: block;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-bottom: solid 1px #ddd;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.sort-wrapper .sort-title-holder .sort-title {
+  display: block;
+  overflow: hidden;
+  float: left;
+  padding: 0 20px 0 30px;
+  line-height: 55px;
+  font-size: 20px;
+  color: #333;
+}
+.sort-wrapper .sort-title-holder .sort-buts-holder {
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url(/assets/sunrise/vline.gif) repeat-y left top;
+  padding: 13px 20px 10px;
+}
+.sort-wrapper .sort-title-holder .sort-buts-holder input.button {
+  float: left;
+  margin: 0 10px 0 0;
+}
+.sort-wrapper .sort-items-holder {
+  display: block;
+}
+.sort-wrapper .sort-items-holder .sort-item {
+  display: block;
+  overflow: hidden;
+  float: left;
+  margin: 5px 5px 10px;
+  background: #fff;
+  border: solid 1px #ccc;
+  padding: 10px;
+  width: 170px;
+  min-height: 40px;
+  font-size: 12px;
+}
+.sort-wrapper .sort-items-holder .sort-item:hover {
+  -moz-box-shadow: 0 0 2px #ccc;
+  -webkit-box-shadow: 0 0 2px #ccc;
+  box-shadow: 0 0 2px #ccc;
+}
+.sort-wrapper .sort-items-holder .sort-item:active {
+  -moz-box-shadow: 0 0 5px #d2d2d2;
+  -webkit-box-shadow: 0 0 5px #d2d2d2;
+  box-shadow: 0 0 5px #d2d2d2;
+  border: solid 1px #cf63d8;
+}
+.sort-wrapper .sort-items-holder .sort-item .sort-inner {
+  position: relative;
+}
+.sort-wrapper .sort-items-holder .sort-item .numb {
+  display: block;
+  position: absolute;
+  right: -9px;
+  top: -9px;
+  background: #882890;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 7px;
+  font-size: 12px;
+}
+.sort-wrapper .sort-items-holder .sort-item .sort-item-right {
+  display: block;
+  float: right;
+  width: 100%;
+  margin-left: -60px;
+  overflow: hidden;
+}
+.sort-wrapper .sort-items-holder .sort-item .sort-item-right .right-data {
+  display: block;
+  margin-left: 60px;
+  overflow: hidden;
+}
+.sort-wrapper .sort-items-holder .sort-item .sort-item-left {
+  display: block;
+  float: left;
+  width: 50px;
+  overflow: hidden;
+}
+.sort-wrapper .sort-items-holder .sort-item .date-time {
+  padding-bottom: 10px;
+}

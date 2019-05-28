@@ -1811,7 +1811,7 @@ input.input-sm, select.form-control.input-sm {
  * ---------------
  */
 
-.form-control {
+.form-control:not([type='checkbox']) {
   border-radius: 0;
   box-shadow: none;
   border-color: #d2d6de;
@@ -1828,6 +1828,10 @@ input.input-sm, select.form-control.input-sm {
     -moz-appearance: none;
     appearance: none;
   }
+}
+
+input[type="checkbox"] {
+  width: auto;
 }
 
 .form-group {

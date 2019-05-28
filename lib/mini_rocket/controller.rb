@@ -14,8 +14,6 @@ module MiniRocket
     autoload :NestedAttributesBuilder, 'mini_rocket/controller/nested_attributes_builder'
 
     LAYOUT = 'mini_rocket/application'
-    SIMPLE_LAYOUT = 'mini_rocket/simple'
-
     VIEWS_PATH = 'app/views/mini_rocket/resources'
     VIEWS_PATTERN = ':action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}'
 
@@ -46,11 +44,11 @@ module MiniRocket
       def reorder(options = {}, &block)
         rocket_builder.build_reorder(options, &block)
 
-        define_method(:reorder) { render layout: SIMPLE_LAYOUT }
+        custom_actions collection: %i[reorder reposition]
 
         define_method(:reposition) do
           update_collection_order(resource_class, params)
-          flash[:notice] = I18n.t('flash.actions.reposition.notice', resource_name: resource_human_name)
+          flash[:notice] = I18n.t('flash.actions.reposition.notice', resource_name: resource_class.name)
           render json: { status: 'success' }
         end
 

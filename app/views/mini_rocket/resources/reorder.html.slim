@@ -1,21 +1,14 @@
-nav.top-menu
-  .menu
-    .menu-user-block
-      = render partial: 'mini_rocket/common/user_dropdown'
+section.panel.panel-with-borders class="reorder-#{resource_collection_name}"
+  .panel-heading
+    = link_to t('mini_rocket.label.cancel'), collection_path, class: 'btn pull-right', id: 'reorder-cancel'
+    = button_tag t('mini_rocket.label.save'), class: 'btn pull-right btn-primary margin-right-10', id: 'reorder-save'
 
-    .menu-info-block
-      .pull-left
-        h3
-          = t('mini_rocket.label.reorder')
-          | &nbsp;
-          = resource_class.model_name.human
+    h3
+      = t('mini_rocket.label.reorder')
+      | &nbsp;
+      = resource_class.model_name.human
 
-      .pull-right
-        = button_tag t('mini_rocket.label.save'), class: 'btn btn-primary mr10', id: 'reorder-save'
-        = link_to t('mini_rocket.label.cancel'), collection_path, class: 'btn', id: 'reorder-cancel'
-
-section.page-content class="reorder-#{resource_collection_name}"
-  section.page-content-inner
-    #reorder.sort-wrapper data-url="#{reposition_collection_path}"
+  .panel-body
+    #reorder.sort-wrapper data-url="#{reposition_resources_path}"
       .sort-items-holder
         == rocket_builder.reorder.render(self)
