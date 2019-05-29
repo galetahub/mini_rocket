@@ -5,7 +5,7 @@
 
     li.dropdown-divider
 
-    - if controller.action_methods.include?(:new)
+    - if controller.action_methods.include?('new')
       li.dropdown-item
         i.fas.fa-plus
         = link_to t('mini_rocket.label.add_resource'), new_resource_path, class: 'link-add'

@@ -4,13 +4,13 @@
       i.far.fa-eye
       span = t('mini_rocket.label.show')
 
-- if can? :edit, resource
+- if controller.action_methods.include?('edit') && can?(:edit, resource)
   li.dropdown-item
     = link_to edit_resource_path(resource), class: 'link-edit' do
       i.far.fa-edit
       span = t('mini_rocket.label.edit')
 
-- if can? :destroy, resource
+- if controller.action_methods.include?('destroy') && can?(:destroy, resource)
   li.dropdown-divider
   li.dropdown-item
     = link_to resource_path(resource), method: :delete, data: { confirm: t('mini_rocket.dialog.confirm_delete') }, class: 'link-delete' do
