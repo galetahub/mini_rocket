@@ -8,9 +8,8 @@
     h3 = resource_class.model_name.human
 
   .panel-body
-    - if rocket_builder.scopes?
-      .row
-        = render partial: 'scopes'
+    = render partial: 'scopes' if rocket_builder.scopes?
+
     .row
       .col-lg-12.margin-bottom-30
         table.table.table-hover.dataTable
