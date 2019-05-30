@@ -15,8 +15,8 @@ uk:
         show: "Перегляд %{resource_name}"
 
     label:
-      add_resource: Створити нову
-      add_new: Додати нову
+      add_resource: Створити
+      add_new: Додати новий
       add: Додати
       cancel: Відміна
       new: Створити
