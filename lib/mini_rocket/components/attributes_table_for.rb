@@ -21,6 +21,8 @@ module MiniRocket
       end
 
       def layout
+        return if @options[:layout] == false
+
         @options[:layout] || LAYOUT
       end
 

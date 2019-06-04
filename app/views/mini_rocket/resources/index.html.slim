@@ -5,7 +5,7 @@
 
   .panel-heading
     = render partial: 'collection_actions'
-    h3 = resource_class.model_name.human
+    h3 = rocket_builder.index.title(resource_class)
 
   .panel-body
     = render partial: 'scopes' if rocket_builder.scopes?

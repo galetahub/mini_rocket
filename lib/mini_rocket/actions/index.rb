@@ -15,6 +15,10 @@ module MiniRocket
         @options[:per_page] || MiniRocket.paginates_per
       end
 
+      def title(klass)
+        @options[:title] || klass.model_name.human
+      end
+
       def call
         reset!
         instance_exec(&@block)
