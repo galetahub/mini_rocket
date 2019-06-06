@@ -52,6 +52,9 @@ module MiniRocket
   mattr_accessor :site_title
   self.site_title = 'Admin panel'
 
+  mattr_accessor :mini_logo
+  self.site_title = 'Admin panel'
+
   mattr_accessor :sortable
   self.sortable = false
 
