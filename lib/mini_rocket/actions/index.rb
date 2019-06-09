@@ -16,7 +16,7 @@ module MiniRocket
       end
 
       def title(klass)
-        @options[:title] || klass.model_name.human
+        render_title(@options[:title]) || klass.model_name.human
       end
 
       def call
@@ -26,6 +26,14 @@ module MiniRocket
 
       def reset!
         @columns = nil
+      end
+
+      private
+
+      def render_title(value)
+        return if value.blank?
+
+        value.respond_to?(:call) ? value.call : value
       end
     end
   end

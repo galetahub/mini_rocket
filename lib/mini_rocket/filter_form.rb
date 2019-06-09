@@ -5,6 +5,7 @@ require 'active_model'
 module MiniRocket
   class FilterForm
     extend ActiveModel::Naming
+    extend ActiveModel::Translation
     include ActiveModel::Conversion
 
     attr_reader :params
@@ -44,7 +45,8 @@ module MiniRocket
     protected
 
     def read_attribute(method_name)
-      return if @params.nil?
+      return unless @params
+
       @params[method_name]
     end
   end
