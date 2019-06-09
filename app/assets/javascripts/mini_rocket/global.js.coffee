@@ -100,6 +100,13 @@ class Global
     $('.treeview').click ->
       $(this).toggleClass('menu-open')
 
+  @initAutosubmit: ->
+    $('.form-autosubmit select,
+      .form-autosubmit input[type="radio"],
+      .form-autosubmit input[type="checkbox"]').off('change.autosubmit').on('change.autosubmit', () ->
+      $(this).parents('form').submit()
+    )
+
   @init: ->
     @initSelect()
     @initMaxLength()
@@ -111,5 +118,6 @@ class Global
     @initDatePickers()
     @initDateRangePickers()
     @initAnimations()
+    @initAutosubmit()
 
 window.Global = Global
