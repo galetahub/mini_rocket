@@ -23,7 +23,8 @@ module MiniRocket
       end
 
       def status_tag(value, class_name = nil)
-        content_tag(:span, value, class: ['label', "label-#{value.to_s.parameterize}", class_name].compact)
+        name = (class_name || value.to_s.parameterize)
+        content_tag(:span, value, class: ['label', "label-#{name}", class_name].compact)
       end
 
       def render_resource_title(resource)
