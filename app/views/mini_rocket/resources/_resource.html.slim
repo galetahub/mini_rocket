@@ -1,3 +1,4 @@
 = content_tag :tr, id: dom_id(record) do
   - rocket_builder.index.columns.each do |column|
-    td = column.render(record, self)
+    td class="#{column.name}"
+      = column.render(record, self)

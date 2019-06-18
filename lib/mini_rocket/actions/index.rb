@@ -19,6 +19,10 @@ module MiniRocket
         render_title(@options[:title]) || klass.model_name.human
       end
 
+      def css(klass)
+        @options[:class] || klass.model_name.plural
+      end
+
       def call
         reset!
         instance_exec(&@block)

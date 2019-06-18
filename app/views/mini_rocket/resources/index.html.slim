@@ -12,11 +12,11 @@
 
     .row
       .col-lg-12.margin-bottom-30
-        table.table.table-hover.dataTable
+        table.table.table-hover.dataTable class="#{rocket_builder.index.css(resource_class)}"
           thead.thead-default
             tr
               - rocket_builder.index.columns.each do |column|
-                = table_column_tag column do
+                = table_column_tag column, class: column.name do
                   = column.render_title(resource_class)
           tbody
             = render partial: 'resource', collection: paginated_collection, as: :record
