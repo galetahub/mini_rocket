@@ -4,12 +4,13 @@ module MiniRocket
   module ResourcesHelper
     include MiniRocket::Controller::ViewHelpers
 
-    def mini_rocket_menu_link(path, controller_names = [])
-      current = Array(controller_names).include?(controller_name)
+    def menu_link(name, path, options = {})
+      options[:class] = 'left-menu-link'
+      active = options[:names] && Array(options[:names]).include?(controller_name) || current_page?(path)
 
-      content_tag(:li, class: current ? 'left-menu-list-active' : 'no-active') do
-        link_to path, class: 'left-menu-link' do
-          yield
+      content_tag(:li, class: [active ? 'active' : 'noactive']) do
+        link_to(path, options) do
+          content_tag(:i, '', class: ['fa', options[:icon]]) + content_tag(:span, name)
         end
       end
     end
