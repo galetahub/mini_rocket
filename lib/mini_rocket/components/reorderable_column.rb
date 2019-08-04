@@ -3,11 +3,11 @@
 module MiniRocket
   module Components
     class ReorderableColumn < Column
-      DEFAULT_URL = '/reorder'.freeze
-      DEFAULT_CSS_NAME = 'js-reorder-table'.freeze
+      DEFAULT_URL = '/reorder'
+      DEFAULT_CSS_NAME = 'js-reorder-table'
 
       def render(_resource, template)
-        template.content_tag(:i, nil, class: 'icmn-move js-reorder-handle')
+        template.content_tag(:i, nil, class: 'fas fa-arrows-alt js-reorder-handle')
       end
 
       def css_name

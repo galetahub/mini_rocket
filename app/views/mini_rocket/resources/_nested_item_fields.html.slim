@@ -7,5 +7,5 @@
   .col-md-1.nested_delete_link
     = form.hidden_field :_destroy, class: 'nested_delete_field' if form.object.persisted?
     = link_to '#delete', class: 'nested_delete_handler' do
-      i.icmn-cross
+      i.fas.fa-times
 

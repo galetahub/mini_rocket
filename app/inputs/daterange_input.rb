@@ -15,7 +15,7 @@ class DaterangeInput < ::SimpleForm::Inputs::Base
 
   def icon_tag
     template.content_tag(:span, class: 'input-group-addon') do
-      template.content_tag(:i, nil, class: 'icmn-calendar')
+      template.content_tag(:i, nil, class: 'fas fa-calendar-alt')
     end
   end
 end
