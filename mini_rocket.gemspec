@@ -26,8 +26,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'inherited_resources', '~> 1.10'
   spec.add_dependency 'kaminari', '~> 1.1'
-  spec.add_dependency 'railties', '~> 5.2'
-  spec.add_dependency 'responders', '~> 2.4'
+  spec.add_dependency 'railties', '>= 5.0'
+  spec.add_dependency 'responders', '~> 3.0'
   spec.add_dependency 'simple_form', '~> 4.1'
   spec.add_dependency 'slim', '~> 4.0'
 
