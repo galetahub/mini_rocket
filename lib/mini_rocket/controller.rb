@@ -12,10 +12,10 @@ module MiniRocket
     autoload :FormBuilder, 'mini_rocket/controller/form_builder'
     autoload :LocalizationBuilder, 'mini_rocket/controller/localization_builder'
     autoload :NestedAttributesBuilder, 'mini_rocket/controller/nested_attributes_builder'
+    autoload :TemplateResolver, 'mini_rocket/controller/template_resolver'
 
     LAYOUT = 'mini_rocket/application'
     VIEWS_PATH = 'app/views/mini_rocket/resources'
-    VIEWS_PATTERN = ':action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}'
 
     included do
       include MiniRocket::Controller::BaseHelpers
@@ -105,9 +105,8 @@ module MiniRocket
     end
 
     def setup_mini_rocket_views_path
-      append_view_path ::ActionView::FileSystemResolver.new(
-        MiniRocket::Engine.root.join(VIEWS_PATH),
-        VIEWS_PATTERN
+      append_view_path MiniRocket::Controller::TemplateResolver.new(
+        MiniRocket::Engine.root.join(VIEWS_PATH)
       )
     end
   end

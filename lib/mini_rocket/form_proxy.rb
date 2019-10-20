@@ -34,7 +34,7 @@ module MiniRocket
     end
 
     def multipart?
-      form_builder && form_builder.multipart?
+      form_builder.present? && form_builder.multipart?
     end
 
     def inputs(label, &block)
