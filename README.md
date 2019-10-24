@@ -22,7 +22,133 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Simple CRUD:
+
+```ruby
+# frozen_string_literal: true
+
+class Manage::UsersController < Manage::BaseController
+  include MiniRocket::Controller
+
+  authorize_resource class: User
+
+  defaults resource_class: User
+  permit_params :all
+
+  scopes do
+    scope I18n.t('label.all'), default: true
+
+    User.states.each do |key, value|
+      scope(I18n.t(key, scope: 'users.states')) { |items| items.where(state: value) }
+    end
+  end
+
+  filter do |f|
+    f.input :name
+    f.input :email
+    f.input :phone_number
+    f.input :city_id, collection: City.alphabetically
+    f.input :role_type_id, collection: RoleType.users, label_method: :title
+    f.input :drugstore_id
+    f.input :with_cert, as: :boolean
+  end
+
+  index title: -> { I18n.t('menu.users') } do
+    id_column
+    column :name
+    column :main_office do |user|
+      user.drugstore.try(:main_office)
+    end
+    column :state do |user|
+      status_tag I18n.t(user.state, scope: 'user.states'), user.state
+    end
+    column :address do |user|
+      user.smart_address
+    end
+    column :balance do |user|
+      user.total_balance
+    end
+    actions
+  end
+
+  form do |f|
+    f.inputs 'Credentials' do
+      input :phone_number
+      input :password, input_html: { autocomplete: 'new-password' }
+    end
+
+    f.inputs 'Details' do
+      input :drugstore_uuid, {
+        as: :select,
+        collection: Drugstore.where(id: f.object.drugstore_id).pluck(:main_office, :uuid),
+        input_html: {
+          class: 'ajax-select-drugstore',
+          data: { 'ajax--url' => '/manage/search/drugstores' }
+        }
+      }
+
+      input :role_type_id, collection: RoleType.users, label_method: :title
+
+      input :first_name
+      input :last_name
+      input :email
+    end
+
+    f.actions
+  end
+
+  show do |record|
+    attributes_table_for record, layout: false do
+      row :id
+      row :first_name
+      row :last_name
+      row :email
+      row :phone_number
+      row :state do
+        status_tag I18n.t(record.state, scope: 'user.states'), record.state
+      end
+      row :address
+      row :role_type do
+        record.role_type.try(:title)
+      end
+      row :drugstore_uuid
+
+      row :sign_in_count
+      row :current_sign_in_at
+      row :last_sign_in_at
+      row :current_sign_in_ip
+      row :last_sign_in_ip
+      row :failed_attempts
+      row :locked_at
+
+      row :created_at
+      row :updated_at
+    end
+  end
+
+  def show
+    @gifts = ::Stats::MonthlyDrugstore.with_state(:waiting)
+                                      .with_certificates
+                                      .where(drugstore_id: resource.drugstore_id)
+                                      .recently
+    super
+  end
+
+  def migrate
+    user = User.find(params[:id])
+    Users::MigrateCommand.call(user, params[:event])
+
+    redirect_to manage_user_path(user), notice: I18n.t('user.actions.migrated')
+  end
+
+  protected
+
+  def end_of_association_chain
+    scope = super.includes(:drugstore).filter(params[:filter]).recently
+    AdminsUsersQuery.new(scope, current_admin_user).query
+  end
+end
+```
 
 ## Development
 
