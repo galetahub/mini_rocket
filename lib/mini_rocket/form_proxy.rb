@@ -18,7 +18,7 @@ module MiniRocket
 
     def render(options, &block)
       @form_builder = nil
-      endpoint = build_endpoint(options.delete(:url))
+      endpoint = build_endpoint(options.delete(:record))
 
       form_string = template.simple_form_for(endpoint, options.deep_dup) do |form|
         @form_builder = form
@@ -61,6 +61,23 @@ module MiniRocket
       form_builder && form_builder.respond_to?(method) || super
     end
 
+    def record
+      [MiniRocket.namespace, @parent, @resource].compact
+    end
+
+    private
+
+    def build_endpoint(endpoint)
+      return record unless endpoint
+
+      case endpoint
+      when Proc then
+        endpoint.call(*[@parent, @resource].compact)
+      else
+        endpoint
+      end
+    end
+
     def current_node
       (@parent_node || children)
     end
@@ -73,23 +90,6 @@ module MiniRocket
       @parent_node = ''.html_safe
       children.concat yield
       @parent_node = nil
-    end
-
-    private
-
-    def build_endpoint(endpoint)
-      return url unless endpoint
-
-      case endpoint
-      when Proc then
-        endpoint.call(*[@parent, @resource].compact)
-      else
-        endpoint
-      end
-    end
-
-    def url
-      [MiniRocket.namespace, @parent, @resource].compact
     end
   end
 end
