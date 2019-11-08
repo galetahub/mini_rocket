@@ -150,6 +150,89 @@ class Manage::UsersController < Manage::BaseController
 end
 ```
 
+### Localization inputs
+
+```ruby
+form html: { multipart: true } do |f|
+  f.localization do
+    input :title
+    input :content, as: :text
+  end
+
+  f.inputs 'Details' do
+    input :is_visible, wrapper: :inline_checkbox
+    input :sort_order
+    input :picture, as: :uploader, hint: '300x300'
+  end
+
+  f.actions
+end
+```
+
+### Specify actions you want
+
+```ruby
+form only: [:edit, :update] do |f|
+  f.localization do
+    input :subtitle
+    input :content, as: :text
+  end
+
+  f.actions
+end
+```
+
+### Index action turn off pagination
+
+```ruby
+index pagination: false do
+  id_column
+  column :title
+  column :address
+  column :is_visible
+  actions
+end
+```
+
+### Show action
+
+```ruby
+show do |record|
+  attributes_table_for record do
+    row :id
+    row :title
+    row :slug
+    row :content do
+      simple_format record.content
+    end
+    row :product_type
+    row :sort_order
+    row :is_visible
+    row :created_at
+    row :updated_at
+  end
+
+  table_for :tooltips, -> { record.tooltips.recently } do
+    id_column
+    column :title
+    column :sort_order
+    column :is_visible
+    column :updated_at
+    column :actions do |tooltip|
+      render partial: 'manage/tooltips/index_actions', locals: { resource: tooltip }
+    end
+
+    bottom do
+      link_to t('mini_rocket.buttons.add'), new_manage_product_tooltip_path(record), class: 'btn btn-primary'
+    end
+  end
+
+  panel 'Schema' do
+    render partial: '/manage/products/schema', locals: { product: record }
+  end
+end
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
