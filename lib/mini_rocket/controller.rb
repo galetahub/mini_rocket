@@ -94,7 +94,7 @@ module MiniRocket
       end
 
       def rocket_builder
-        rocket_store[controller_name] ||= ActionBuilder.new
+        rocket_store[controller_path] ||= ActionBuilder.new
       end
     end
 
