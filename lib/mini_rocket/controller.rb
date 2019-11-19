@@ -101,7 +101,7 @@ module MiniRocket
     private
 
     def rocket_builder
-      rocket_store[controller_name]
+      rocket_store[controller_path]
     end
 
     def setup_mini_rocket_views_path
