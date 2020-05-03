@@ -1,6 +1,7 @@
 require: rubocop-rails
 
 AllCops:
+  NewCops: disable
   Exclude:
     - 'app/views/**/*.slim'
     - 'app/views/**/**/*.slim'
@@ -10,7 +11,7 @@ Style/Documentation:
 
 ##################### Metrics ##################################
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 110
 
 Metrics/ClassLength:
